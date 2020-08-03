@@ -15,7 +15,7 @@ rs
 
 - Link: http://127.0.0.1:5500/public/html/
 
-- Banco de dados: projeto_tchan2
+- Banco de dados: projeto_tchan
 
 
 <<<<<<< HEAD:install.txt
