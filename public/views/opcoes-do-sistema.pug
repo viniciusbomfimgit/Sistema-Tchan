@@ -1,0 +1,19 @@
+doctype html
+head
+    title Opções do sistema - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .main-container
+        .main-container__top
+            img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+        .main-container__content
+            .main-continter__content__options
+                input.main-container__content__options__button(type='button' onclick='paraPin()' value='Alterar PIN')
+                input.main-container__content__options__button(type='button' onclick='paraCadastroColaborador()' value='+ Colaborador')
+            button.main-container__content__back(onclick='paraListaClientes(this.cliente)' style='font-size: 26px;')
+                i.fas.fa-arrow-left
+    script(defer='' src='../js/opcoes-do-sistema.js')
+    
+                

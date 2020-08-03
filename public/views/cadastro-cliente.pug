@@ -1,0 +1,26 @@
+doctype html
+head
+    title Cadastrar cliente - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .main-container
+        .main-container__top
+            img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+        .main-container__content
+            .main-container__content__form-cadastro
+                p Nome: 
+                input.main-container__content__form-cadastro__input#nome_cliente(type='text' placeholder='Digite o nome do cliente')
+                p CPF: 
+                input.main-container__content__form-cadastro__input#cpf_cliente(type='text' placeholder='Digite o CPF do cliente')
+                p E-mail: 
+                input.main-container__content__form-cadastro__input#email_cliente(type='text' placeholder='Digite o e-mail do cliente')
+                p Telefone: 
+                input.main-container__content__form-cadastro__input#telefone_cliente(type='text' placeholder='Digite o telefone do cliente')
+                br
+                input.main-container__content__button(type='button' onclick='cadastrarCliente()' value='Cadastrar')
+                button.main-container__content__back(onclick='paraListaClientes()' style='font-size: 26px;')
+                    i.fas.fa-arrow-left
+    script(defer='' src='../js/cadastro-cliente.js')
+    

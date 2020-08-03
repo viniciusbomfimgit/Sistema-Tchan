@@ -1,0 +1,101 @@
+.painel-ajuda
+    .painel-ajuda__background
+        h2 Qual operação deseja executar?
+        .painel-ajuda__background__options
+            h4(onclick='AbrirAjudaConsulta()') Consulta
+            br
+            h4(onclick='AbrirAjudaCadastro()') Cadastro
+            br
+            h4(onclick='AbrirAjudaAlteracao()') Alteração
+            br
+            h4(onclick='AbrirAjudaCancelamento()') Cancelamento de um agendamento
+            br
+            h4.painel-ajuda__background__options__botao-retorno(onclick='AbrirPainelAjuda()') Sair do painel de ajuda
+        .painel-ajuda__background__consulta
+            h3 Consultar um cliente
+            p 1. Acesse a lista de clientes através do #[strong botão Clientes] na página inicial;
+            p 2. Busque pelo cliente desejado na caixa de busca;
+            p 3. Selecione - entre os resultados exibidos - o que corresponde corretamente ao desejado.
+            hr
+            h3 Consultar um agendamento
+            p #[strong FORMA 1]
+            p 1. Acesse a lista de agendamentos através do #[strong botão Agendamentos] na página inicial;
+            p 2. Busque pelo agendamento desejado.
+            hr
+            p #[strong FORMA 2]
+            p 1. Acesse o perfil do cliente ou colaborador envolvido no agendamento;
+            p 2. Selecione o agendamento desejado na tabela existente em seu perfil.
+            hr
+            h3 Consultar um serviço
+            p 1. Acesse a lista de serviços através do #[strong botão Serviços] na página inicial;
+            p 2. Busque pelo serviço desejado.
+            hr
+            h3 Consultar um colaborador
+            p 1. Acesse a lista de colaboradores através do #[strong botão Colaboradores] na página inicial;
+            p 2. Busque pelo colaborador desejado.
+            br
+            h4.painel-ajuda__background__options__botao-retorno(onclick='VoltarParaSelecao()') Retornar à tela de seleção
+        .painel-ajuda__background__cadastro
+            h3 Cadastrar um cliente
+            p 1. Acesse a lista de clientes através do #[strong botão Clientes] na página inicial;
+            p 2. Clique no #[strong botão Cadastrar cliente] (No canto inferior direito da tela, representado pelo ícone "#[strong +]");
+            p 3. Preencha o formulário com os dados do cliente;
+            p 4. Clique em cadastrar e, se tudo tiver sido preenchido corretamente, você receberá uma mensagem informando que ele foi cadastrado com sucesso.
+            hr
+            h3 Cadastrar um agendamento
+            p 1. Acesse a lista de clientes através do #[strong botão Clientes] na página inicial;
+            p 2. Acesse o perfil do cliente que deseja agendar (se ele não possuir cadastro, deve ser efetuado seu cadastro antes de prosseguir);
+            p 3. Clique no #[strong botão Cadastrar agendamento] (No canto inferior direito da tela, representado pelo ícone "#[strong +]");
+            p 4. Seleciona a data em que ocorrerá o serviço;
+            p 5. Preencha o formulário com os serviços a serem realizados, o horário a serem realizados e, se necessário, adicione uma observação;
+            p 6. Clique no #[strong botão Confirmar] e, se tudo tiver sido preenchido corretamente, você receberá uma mensagem informando que ele foi cadastrado com sucesso.
+            hr
+            h3 Cadastrar um serviço
+            p 1. Acesse a lista de serviços através do #[strong botão Serviços] na página inicial;
+            p 2. Clique no #[strong botão Cadastrar serviço] (No canto inferior direito da tela, representado pelo ícone "#[strong +]");
+            p 3. Preencha o formulário com os dados do serviço;
+            p 4. Clique em cadastrar e, se tudo tiver sido preenchido corretamente, você receberá uma mensagem informando que ele foi cadastrado com sucesso.
+            hr
+            h3 Cadastrar um colaborador (Apenas ADM)
+            p 1. Acesse as opções do sistema através do #[strong botão Opções do sistema] (engrenagem) na página inicial;
+            p 2. Clique no #[strong botão '+ Colaborador'];
+            p 3. Preencha o formulário com os dados do colaborador;
+            p 4. Clique em cadastrar e, se tudo tiver sido preenchido corretamente, você receberá uma mensagem informando que ele foi cadastrado com sucesso.
+            br
+            h4.painel-ajuda__background__options__botao-retorno(onclick='VoltarParaSelecao()') Retornar à tela de seleção
+        .painel-ajuda__background__alteracao
+            h3 Alterar um cliente
+            p 1. Utilize os passos para consultar um cliente, para chegar no perfil do cliente que deseja alterar;
+            p 2. Clique em #[strong Editar], para conseguir editar os campos do formulário;
+            p 3. Ao terminar as alterações, clique em #[strong Salvar] e, se for alterado com sucesso, você receberá uma mensagem informativa;
+            hr
+            h3 Alterar um agendamento
+            p  1. Utilize os passos para consultar um agendamento, para chegar até o registro do agendamento que deseja alterar;
+            p 2. Efetue as alterações desejadas;
+            p 3. Ao terminar as alterações, clique em #[strong Confirmar] e, se for alterado com sucesso, você receberá uma mensagem informativa;
+            hr
+            h3 Alterar um serviço
+            p 1. Utilize os passos para consultar um serviço, para chegar até o registro do serviço que deseja alterar;
+            p 2. Clique em #[strong Editar], para conseguir editar os campos do formulário;
+            p 3. Ao terminar as alterações, clique em #[strong Salvar] e, se for alterado com sucesso, você receberá uma mensagem informativa;
+            hr
+            h3 Alterar um colaborador (Apenas ADM)
+            p 1. Utilize os passos para consultar um colaborador, para chegar no perfil do colaborador que deseja alterar;
+            p 2. Clique em #[strong Editar], para conseguir editar os campos do formulário;
+            p 3. Ao terminar as alterações, clique em #[strong Salvar] e, se for alterado com sucesso, você receberá uma mensagem informativa;
+            hr
+            h3 Alterar PIN de um colaborador
+            p 1. Acesse as opções do sistema através do #[strong botão Opções do sistema] (engrenagem) na página inicial;
+            p 2. Clique no #[strong botão Alterar PIN];
+            p 3. Selecione o colaborador que deseja alterar o PIN;
+            p 4. Digite o novo PIN do colaborador e o confirme;
+            p 5. Digite a senha de administrador;
+            p 6. Clique em #[strong Alterar], você receberá uma mensagem informativa sobre a conclusão da alteração.
+            br
+            h4.painel-ajuda__background__options__botao-retorno(onclick='VoltarParaSelecao()') Retornar à tela de seleção
+        .painel-ajuda__background__cancelamento
+            h3 Cancelar um agendamento
+            p  1. Utilize os passos para consultar um agendamento, para chegar até o registro do agendamento que deseja alterar;
+            p 3. Clique em #[strong Cancelar] e, se for cancelado com sucesso, você receberá uma mensagem informativa;
+            h4.painel-ajuda__background__options__botao-retorno(onclick='VoltarParaSelecao()') Retornar à tela de seleção
+

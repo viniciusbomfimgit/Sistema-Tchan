@@ -1,0 +1,31 @@
+doctype html
+head
+    title Cadastrar agendamento - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .main-container
+        .main-container__top
+            img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+        .main-container__content
+            .main-container__content__form
+                .main-container__content__form__left
+                    p#instrucao Selecione uma data
+                    input#data(type='date' onchange='passo2()')
+                    .main-container__content__form__left__services-selection(hidden=true)
+                        input(type="button" value="Selecionar serviços" onclick="ExibirListaServicos()")
+                        .main-container__content__form__left__services-selection__table(hidden='true')
+                            table#listaServicos
+                .main-container__content__form__right
+                    .main-container__content__form__right__observations(hidden='')
+                        textarea#observacoes("maxlength: 255;" type='text' placeholder='Adicionar uma observação. (Opcional)')
+                    .main-container__content__form__right__info
+                        p#tempo(hidden='') Dura&ccedil;&atilde;o estimada: -
+                        p#total(hidden='') Valor estimado: -
+            .main-container__content__schedule
+                #listaAgendamentos
+            input#cadastrar.main-container__content__button(hidden='' onclick='cadastrarAgendamento()' type='button' value='Confirmar')
+            button.main-container__content__back(id='voltar' cliente='' onclick='paraCliente(this.cliente)' style='font-size: 26px;')
+                i.fas.fa-arrow-left
+    script(defer='' src='../js/cadastro-agendamento.js')

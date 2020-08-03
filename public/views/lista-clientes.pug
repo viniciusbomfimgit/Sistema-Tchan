@@ -1,0 +1,23 @@
+doctype html
+head
+    title Clientes - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .main-container
+        .main-container__top
+            img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+            .main-container__top__search
+                input#busca.main-container__top__search__input(type='text' placeholder='Quem você está procurando?')
+                input.main-container__top__search__button(type='button' onclick='paraBuscaCliente()' value='Buscar')
+        .main-container__content
+            table#listaClientes.main-container__content__table
+            button.main-container__content__back(onclick='paraIndex()' style='font-size: 26px;')
+                i.fas.fa-arrow-left
+            input.main-container__content__add(type='button' onclick='paraCadastroCliente()' value='+')
+    script(defer='' src='../js/lista-clientes.js')
+    script.
+        window.onload = function () {
+            socket.emit('getClientList')
+        };

@@ -1,0 +1,36 @@
+doctype html
+head
+  title Agendamento - TCHAN
+  include includes/head
+body
+  include includes/resolution-message
+  include includes/painel-ajuda
+  .main-container
+    .main-container__top
+      img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+    .main-container__content
+      .main-container__content__form
+        .main-container__content__form__left
+          input#data(type='date' onchange='changeDate()')
+          .main-container__content__form__left__services-selection
+            input(type="button" value="Selecionar serviços"  onclick="ExibirListaServicos()")
+            .main-container__content__form__left__services-selection__table(hidden="true")
+              table#listaServicos
+          input#alterar.main-container__content__button(onclick='alterarAgendamento()' type='button' value='Confirmar')
+          input#alterar.main-container__content__button(onclick='deletarAgendamento()' type='button'  value='Cancelar')
+        .main-container__content__form__right
+          .main-container__content__form__right__observations
+            textarea#observacoes("maxlength: 255;" type='text' placeholder='Adicionar uma observação. (Opcional)')
+          .main-container__content__form__right__info
+            p#tempo Dura&ccedil;&atilde;o estimada: -
+            p#total Valor estimado: -
+      .main-container__content__schedule
+        #listaAgendamentos
+      button.main-container__content__back(id='voltar' onclick='paraOrigem(this.origem)' style='font-size: 26px;')
+        i.fas.fa-arrow-left
+  script(defer='' src='../js/agendamento.js')
+  script.
+    window.onload = function() {
+      document.getElementById('voltar').origem = getUrlVars()["voltar"]//.replace('cliente.html?id=', '')
+      socket.emit('getABook', getUrlVars()["id"])
+    };

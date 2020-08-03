@@ -1,0 +1,33 @@
+doctype html
+head
+    title Bella e Vaidosa - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .home-screen-background
+        .logo
+            img(src='../img/logo.png' alt='logo Bella e Vaidosa' width='240px')
+        .home-buttons
+            input#cliente.home-buttons__button(type='button' onclick='paraListaClientes()' value='Clientes')
+            input#agendamento.home-buttons__button(type='button' onclick='paraListaAgendamentos()' value='Agendamentos')
+            // com id="agendamento's'" estava deixando a cor preta
+            input#colaboradores.home-buttons__button(type='button' onclick='paraListaColaboradores()' value='Colaboradores')
+            input.home-buttons__button(type='button' onclick='paraListaServicos()' value='Serviços')
+            button#opcoes.home-buttons__button__settings(onclick='paraOpcoesDoSistema() ')
+                i.fas.fa-cog.fa-lg
+        .day-schedule
+            input#data(type='date' onchange='listaAgendamento()')
+            #listaAgendamentos.container
+    script(defer='' src='../js/index.js')
+    script.
+        window.onload = function () {
+            let today = new Date();
+            let dd = String(today.getDate()).padStart(2, '0');
+            let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            let yyyy = today.getFullYear();
+            today = yyyy + '-' + mm +'-' + dd;
+            //today = '2020-03-28'
+            document.getElementById('data').value = today
+            socket.emit('getBookingData', today)
+        };

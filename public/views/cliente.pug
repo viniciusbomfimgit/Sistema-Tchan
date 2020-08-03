@@ -1,0 +1,36 @@
+doctype html
+head
+    title Perfil do cliente - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .main-container
+        .main-container__top
+            img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+        .main-container__content
+            .main-container__content__form-cadastro
+                p Nome: 
+                input.main-container__content__form-cadastro__input#nome_cliente(type='text')
+                p CPF: 
+                input.main-container__content__form-cadastro__input#cpf_cliente(type='text')
+                p Email: 
+                input.main-container__content__form-cadastro__input#email_cliente(type='text')
+                p Telefone: 
+                input.main-container__content__form-cadastro__input#telefone_cliente(type='text')
+                br
+                input#editar.main-container__content__button(onclick="editarDados('clientes')" type='button' value='Editar')
+                input#salvar.main-container__content__button(onclick="salvarDados('clientes')" type='button' hidden='true' value='Salvar')
+            .main-container__content__agendamentos-cliente
+                table#listaAgendamento
+            input#agendar.main-container__content__add(type='button' onclick='paraCadastroAgendamento(this.cliente)' value='+')
+            button.main-container__content__back(onclick='paraListaClientes(this.cliente)' style='font-size: 26px;')
+                i.fas.fa-arrow-left
+    script.
+        window.onload = function () {
+            document.getElementById('agendar').cliente = getUrlVars()["id"]
+            socket.emit('getClientData', getUrlVars()["id"])
+            socket.emit('getBookByClient', getUrlVars()["id"])
+        };
+    script(defer='' src='../js/cliente.js')
+    

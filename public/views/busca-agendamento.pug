@@ -1,0 +1,19 @@
+doctype html
+head
+    title Resultado da busca - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .main-container
+        .main-container__top
+            img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+        .main-container__content
+            table#listaAgendamentos
+            button.main-container__content__back(onclick='paraIndex()' style='font-size: 26px;')
+                i.fas.fa-arrow-left
+    script(defer='' src='../js/busca-agendamento.js')   
+    script.
+        window.onload = function () {
+            socket.emit('getSearchData', getUrlVars()["busca"])
+        };

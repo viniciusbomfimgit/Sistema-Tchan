@@ -1,0 +1,19 @@
+doctype html
+head
+    title Agendamentos - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .main-container
+        .main-container__top
+            img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+        .main-container__content
+            table#listaAgendamento.main-container__content__table
+            button.main-container__content__back(onclick='paraIndex()' style='font-size: 26px;')
+                i.fas.fa-arrow-left
+    script(defer='' src='../js/lista-agendamentos.js')
+    script.
+        window.onload = function () {
+            socket.emit('getBookingList')
+        };

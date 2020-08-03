@@ -1,0 +1,47 @@
+doctype html
+head
+    title Cadastrar colaborador - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .main-container
+        .main-container__top
+            img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+        .main-container__content
+            .main-container__content__form-cadastro
+                p Nome:
+                input.main-container__content__form-cadastro__input#nome(type='text' name='nome' required='' placeholder='Digite o nome do colaborador')
+                p CPF:
+                input.main-container__content__form-cadastro__input#cpf(type='text' name='cpf' required='' placeholder='Digite o CPF do colaborador')
+                p Telefone:
+                input.main-container__content__form-cadastro__input#telefone(type='text' name='telefone' required='' placeholder='Digite o telefone do colaborador')
+                p Rua:
+                input.main-container__content__form-cadastro__input#rua(type='text' name='rua' required='' placeholder='Digite a rua do colaborador')
+                p Número:
+                input.main-container__content__form-cadastro__input#numero(type='text' name='numero' required='' placeholder='Digite o número da residência do colaborador')
+                p Complemento:
+                input.main-container__content__form-cadastro__input#complemento(type='text' name='complemento' required='' placeholder='Digite o complemento do endereço (opcional)')
+                p CEP:
+                input.main-container__content__form-cadastro__input#cep(type='text' name='cep' required='' placeholder='Digite o CEP do colaborador')
+                p Cidade
+                input.main-container__content__form-cadastro__input#cidade(type='text' name='cidade' required='' placeholder='Digite a cidade do colaborador')
+                p Estado
+                input.main-container__content__form-cadastro__input#estado(type='text' name='estado' required='' placeholder='Digite o estado do colaborador')
+                p PIN
+                input.main-container__content__form-cadastro__input#pass1(type='password' name='password' minlength='8' maxlength='8' required='' placeholder='Digite o PIN do colaborador')
+                p Confirmação de PIN
+                input.main-container__content__form-cadastro__input#pass2(type='password' name='password' minlength='8' maxlength='8' required='' placeholder='Confirme o PIN do colaborador')
+                p O colaborador será administrador do sistema?
+                input.main-container__content__form-cadastro__input#isOwner(type='checkbox' name='isOwner' required='')
+                br
+                input.main-container__content__button(onclick='cadastrarColaborador()' type='button' value='Confirmar')
+                br
+                br
+                br
+                br
+                br
+                br
+            button.main-container__content__back(onclick='paraOpcoesDoSistema()' style='font-size: 26px;')
+                i.fas.fa-arrow-left
+    script(defer='' src='../js/cadastro-colaborador.js')

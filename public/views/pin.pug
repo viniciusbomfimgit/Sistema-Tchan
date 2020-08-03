@@ -1,0 +1,26 @@
+doctype html
+head
+    title Alterar PIN - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .main-container
+        .main-container__top
+            img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+        .main-container__content
+            .main-container__content__form-cadastro
+                label(for='pessoas') Colaborador:
+                select#pessoas(name='pessoas')
+                p Digite um PIN
+                input.main-container__content__form-cadastro__input#pass1(type='password' name='password' minlength='8' maxlength='8' required='' placeholder='Digite um novo PIN para o colaborador')
+                p Confirme o PIN 
+                input.main-container__content__form-cadastro__input#pass2(type='password' name='password' minlength='8' maxlength='8' required='' placeholder='Confirme o novo PIN do colaborador')
+                p Digite a senha de administrador 
+                input.main-container__content__form-cadastro__input#admin(type='password' name='password' minlength='8' required='' placeholder='Digite seu PIN de administrador')
+                br
+                input.main-container__content__button(onclick='alterarSenha()' type='button' value='Alterar')
+                button.main-container__content__back(onclick='paraOpcoesDoSistema()' style='font-size: 26px;')
+                    i.fas.fa-arrow-left
+
+    script(defer='' src='../js/pin.js')

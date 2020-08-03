@@ -1,0 +1,27 @@
+doctype html
+head
+	title Cadastrar serviço - TCHAN
+	include includes/head
+body
+	include includes/resolution-message
+	include includes/painel-ajuda
+	.main-container
+		.main-container__top
+			img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+			.main-container__top__search
+				input#voltar.main-container__top__search__button(cliente='' onclick='paraListaServicos(this.cliente)' type='button' value='Voltar')
+		.main-container__content
+			.main-container__content__form-cadastro
+				p Nome: 
+				input.main-container__content__form-cadastro__input#nome_servico(type='text' placeholder='Digite o nome do serviço')
+				p Descricao: 
+				input.main-container__content__form-cadastro__input#descricao(type='text' placeholder='Digite uma breve descrição para o serviço')
+				p Duracao: 
+				input.main-container__content__form-cadastro__input#duracao(type='time' placeholder='Digite a duração do serviço (em minutos)')
+				p Valor: 
+				input.main-container__content__form-cadastro__input#valor(placeholder='Digite o valor do serviço')
+				br
+				input.main-container__content__button(onclick='cadastrarServico()' type='button' value='Confirmar')
+			button.main-container__content__back(onclick='paraListaServicos()' style='font-size: 26px;')
+				i.fas.fa-arrow-left
+	script(defer='' src='../js/cadastro-servico.js')

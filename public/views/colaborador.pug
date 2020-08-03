@@ -1,0 +1,43 @@
+doctype html
+head
+    title Perfil do colaborador - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .main-container
+        .main-container__top
+            img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+        .main-container__content
+            .main-container__content__form-cadastro
+                p Nome: 
+                input.main-container__content__form-cadastro__input#nome_colab(type='text')
+                p CPF: 
+                input.main-container__content__form-cadastro__input#cpf_colab(type='text')
+                p Telefone: 
+                input.main-container__content__form-cadastro__input#telefone_colab(type='text')
+                p Rua: 
+                input.main-container__content__form-cadastro__input#rua_colab(type='text')
+                p Numero: 
+                input.main-container__content__form-cadastro__input#numero_casa_colab(type='text')
+                p Complemento: 
+                input.main-container__content__form-cadastro__input#complemento_colab(type='text')
+                p CEP: 
+                input.main-container__content__form-cadastro__input#cep_colab(type='text')
+                p Cidade: 
+                input.main-container__content__form-cadastro__input#cidade_colab(type='text')
+                p Estado: 
+                input.main-container__content__form-cadastro__input#estado_colab(type='text')
+                input#editar.main-container__content__button(onclick="editarDados('colaboradores')" type='button' value='Editar')
+                input#salvar.main-container__content__button(onclick="salvarDados('colaboradores')" type='button' hidden='true' value='Salvar')
+            .main-container__content__agendamentos-cliente
+                table#listaAgendamento
+            button.main-container__content__back(onclick='paraListaColaboradores(this.cliente)' style='font-size: 26px;')
+                i.fas.fa-arrow-left
+    script.
+        window.onload = function () {
+            socket.emit('getEmployeeData', getUrlVars()["id"])
+            socket.emit('getBookByEmployee', getUrlVars()["id"])
+        };
+    script(defer='' src='../js/colaborador.js')
+    

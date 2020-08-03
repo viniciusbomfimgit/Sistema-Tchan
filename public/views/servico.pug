@@ -1,0 +1,30 @@
+doctype html
+head
+    title Descrição do serviço - TCHAN
+    include includes/head
+body
+    include includes/resolution-message
+    include includes/painel-ajuda
+    .main-container
+        .main-container__top
+            img.main-container__top__logo(src='../img/logo.png' width='100' height='auto' onclick='paraIndex()')
+        .main-container__content
+            .main-container__content__form-cadastro
+                p Nome: 
+                input.main-container__content__form-cadastro__input#nome_servico(type='text')
+                p Descricao: 
+                input.main-container__content__form-cadastro__input#descricao(type='text')
+                p Duracao: 
+                input.main-container__content__form-cadastro__input#duracao(type='time')
+                p Valor: 
+                input.main-container__content__form-cadastro__input#valor
+                br
+                input#editar.main-container__content__button(onclick="editarDados('servicos')" type='button' value='Editar')
+                input#salvar.main-container__content__button(onclick="salvarDados('servicos')" type='button' hidden='true' value='Salvar')
+                button.main-container__content__back(onclick='paraListaServicos()' style='font-size: 26px;')
+                    i.fas.fa-arrow-left
+        script.
+            window.onload = function () {
+                socket.emit('getServiceData', getUrlVars()["id"])
+            };
+    script(defer='' src='../js/servico.js')
