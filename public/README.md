@@ -2,10 +2,10 @@
 
 - Para instalar as dependências do projeto:
 
-npm install
-npm i --save-dev nodemon
-npm install mysql --save
-npm i
+- npm install
+- npm i --save-dev nodemon
+- npm install mysql --save
+- npm i
 
 - Para iniciar o servidor:
 npm run start 
