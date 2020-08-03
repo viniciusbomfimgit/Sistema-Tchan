@@ -1,2 +1,2 @@
 # Sistema-Tchan
-Sistema desenvolvido no 4° semestre da matéria Engenharia de software 3, do curso Análise e desenvolvimento de sistemas - Fatec SP. Responsável pela documentação do projeto, auxilio no desenvolvimento do banco de dados e html. 
+Sistema desenvolvido no 4° semestre do curso Análise e desenvolvimento de sistemas, disciplina Engenharia de software 3 - Fatec SP. Responsável pela documentação do projeto, auxílio no desenvolvimento do banco de dados e html. 
